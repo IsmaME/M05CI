@@ -18,11 +18,13 @@ class MatrixTest {
             new Matrix(width, height);
         });
     }
-
-
-    @org.junit.jupiter.api.Test
-    void getHeight() {
+    @ParameterizedTest
+    @CsvSource({"5,5", "10,20", "9384,12384"})
+    void getHeight_OK(int width, int height) {
+        Matrix m = new Matrix(width, height);
+        Assertions.assertEquals(height, m.getHeight());
     }
+
 
     @org.junit.jupiter.api.Test
     void fill() {
