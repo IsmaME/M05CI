@@ -37,7 +37,7 @@ public class Matrix {
      * @param min The minimum value allowed for the random data (inclusive).
      * @param max The maximum value allowed for the random data (inclusive).
      */
-    public void Fill(int min, int max){
+    public void fill(int min, int max){
         Random r = new Random();
 
         for(int i=0; i<width; i++){
@@ -51,15 +51,15 @@ public class Matrix {
      * Fills the Matrix with the given data.
      * @param num The minimum value that will be used to fill the Matrix.
      */
-    public void Fill(int num){
-        Fill(num, num);
+    public void fill(int num){
+        fill(num, num);
     }
 
     /**
      * Fills the Matrix with random data.
      */
-    public void Fill(){
-        Fill(Integer.MIN_VALUE, Integer.MAX_VALUE);
+    public void fill(){
+        fill(Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
     /**
@@ -92,7 +92,7 @@ public class Matrix {
      * Returns the Matrix representation as text.
      * @return The Matrix as a string.
      */
-    public String ToString(){
+    public String _toString(){
         String s = "";
 
         for(int i=0; i<width; i++){

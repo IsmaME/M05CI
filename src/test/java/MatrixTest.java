@@ -26,16 +26,26 @@ class MatrixTest {
     }
 
 
-    @org.junit.jupiter.api.Test
-    void fill() {
+    /* @ParameterizedTest
+    @CsvSource({"5,5,2", "10,20,7", "9384,12384,9"})
+    void fill_Unique_number(int width, int height, int num) {
+    }*/
+
+    @ParameterizedTest
+    @CsvSource({"5,5,2", "10,20,7", "9384,12384,9"})
+    void count(int width, int height, int num) {
+        Matrix m = new Matrix(width, height);
+        m.fill(num);
+        int count = width * height;
+        Assertions.assertEquals(count, m.Count(num));
     }
 
-    @org.junit.jupiter.api.Test
-    void count() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void found() {
+    @ParameterizedTest
+    @CsvSource({"5,7,2", "30,50,7", "6000,1444,9"})
+    void found(int width, int height, int num) {
+        Matrix m = new Matrix(width,height);
+        m.fill(num);
+        Assertions.assertTrue(m.Found(num));
     }
 
     @org.junit.jupiter.api.Test
